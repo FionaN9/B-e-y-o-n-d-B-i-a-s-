@@ -1,0 +1,185 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    background-color: black; 
+    color: white; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h5 {
+    display: flex; /* Ensure letters align horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    gap: 5px; /* Add space between letters */
+    font-size: 5em; /* Make the subtitle larger than h1 */
+    color: white; /* Maintain readability */
+    margin: 20px; /* Add consistent spacing around h5 */
+    text-align: left;
+}
+
+h1 {
+    display: flex; /* Ensure letters align horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    gap: 5px; /* Add space between letters */
+    font-size: 2.5em; /* Base size for h1 */
+    color: white; /* Maintain readability */
+    margin: 20px; /* Same margin as h5 for consistency */
+    text-align: left;
+    font-weight: bold;
+}
+
+h1 span, h5 span {
+    display: inline-block; /* Allows each letter to scale independently */
+    transition: transform 0.3s ease; /* Smooth scaling */
+}
+
+h1 span:hover, h5 span:hover {
+    cursor: pointer; /* Optional: Display a pointer for interactivity */
+}
+
+h2 {
+    display: flex; /* Ensure letters align horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    gap: 5px; /* Add space between letters */
+    font-size: 2em; /* Base font size */
+    color: white; /* Text color for readability */
+    margin: 20px; /* Consistent spacing with h1 and h5 */
+    text-align: left;
+    padding-left: 60px;
+}
+
+h2 span {
+    display: inline-block; /* Allows each letter to shrink independently */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+h2 span:hover {
+    cursor: pointer; /* Optional: Display a pointer cursor for interactivity */
+}
+
+
+h3, h4 {
+    color: rgb(0, 0, 0); /* Black text inside the colored boxes */
+    text-align: center; 
+}
+
+#titles {
+    text-align: left; /* Align text to the left */
+    margin: 0;
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+    top: 0; /* Position titles at the top of the page */
+    z-index: 10;
+    width: 100%; /* Full width of the viewport */
+    background-color: black; /* Matches the background color */
+    padding: 20px; /* Adds space inside */
+    color: white; /* Ensures readability */
+    position: fixed; /* Keeps the titles section fixed */
+    
+}
+
+h4{
+    text-align: left;
+}
+
+p {
+    line-height: 1.8;
+    text-align: left;
+}
+
+.external_links a {
+    color: #ffffff;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.external_links:hover {
+    font-style: italic;
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+#speakers {
+    position: absolute;
+    bottom: 0; /* Ensure the speaker section stays at the bottom */
+    display: flex;
+    justify-content: center; /* Center the boxes horizontally */
+    align-items: flex-end; /* Align the boxes on the same baseline */
+    width: 100%; /* Full container width */
+    gap: 30px; /* Space between boxes */
+    margin-top: 100px; /* Push the squares below the fixed titles */
+    z-index: 50;
+}
+
+.event {
+    width: 250px; /* Initial size of the boxes */
+    height: 250px; /* Ensure squares */
+    background-color: #f0f0f0; /* Light background for readability */
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; /* Smooth animations */
+}
+
+.event h3 {
+    margin: 0;
+    font-size: 1.5em; /* Fit title proportionally in the squares */
+    text-align: center;
+}
+
+.event p {
+    font-size: 1em;
+}
+
+#speakers #maria-carolina-cambre {
+    background-color: #3E449D; 
+    color: white; /* Adjusted text color for better readability */
+}
+
+#speakers #isabel-machado {
+    background-color: #308649; 
+    color: white;
+}
+
+#speakers #daniel-wildberger {
+    background-color: #A70C0C; 
+    color: white;
+}
+
+#speakers #shima-rashnoodi {
+    background-color: #D49125; 
+    color: rgb(0, 0, 0);
+
+}
+
+.details {
+    display: none; /* Initially hide the details */
+    padding: 10px;
+    text-align: justify;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    font-size: 1.1em;
+    color: rgb(0, 0, 0); /* Ensure details are visible */
+}
+
+.event.expanded {
+    width: 400px; /* Expanded square size */
+    height: 400px; /* Maintain square proportions */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content at the top when expanded */
+    aspect-ratio: unset; /* Overrides aspect ratio */
+}
+
+.event.expanded .details {
+    display: block; /* Reveal details when expanded */
+}
